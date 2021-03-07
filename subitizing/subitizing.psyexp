@@ -39,57 +39,18 @@
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="import * as psychopy.visual from 'psychopy/visual';&amp;#10;import * as psychopy.core from 'psychopy/core';&amp;#10;import * as random from 'random';&amp;#10;var circleCoords, circles, xPos, yPos;&amp;#10;win.flip();&amp;#10;core.wait(1);&amp;#10;circles = [];&amp;#10;circleCoords = [];&amp;#10;for (var i = 0, _pj_a = dotCount; (i &lt; _pj_a); i += 1) {&amp;#10;    xPos = random.uniform((- 0.25), 0.25);&amp;#10;    yPos = random.uniform((- 0.25), 0.25);&amp;#10;    circles.append(new psychopy.visual.Circle({&quot;win&quot;: win, &quot;lineWidth&quot;: 0, &quot;opacity&quot;: 1, &quot;radius&quot;: 0.01, &quot;fillColor&quot;: &quot;black&quot;, &quot;pos&quot;: [xPos, yPos]}));&amp;#10;    circleCoords.append([xPos, yPos]);&amp;#10;}&amp;#10;thisExp.addData(&quot;circleCoords&quot;, circleCoords);&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="import psychopy.visual, psychopy.core&amp;#10;import random&amp;#10;&amp;#10;win.flip()&amp;#10;core.wait(1)&amp;#10;&amp;#10;circles = []&amp;#10;circleCoords = []&amp;#10;for i in range(dotCount):&amp;#10;    xPos = random.uniform(-0.25, 0.25) &amp;#10;    yPos = random.uniform(-0.25, 0.25) &amp;#10;    circles.append(psychopy.visual.Circle(&amp;#10;        win = win,&amp;#10;        lineWidth = 0,&amp;#10;        opacity = 1,&amp;#10;        radius = 0.01,&amp;#10;        fillColor = 'black',&amp;#10;        pos = (xPos, yPos)&amp;#10;    ))&amp;#10;    circleCoords.append((xPos, yPos))&amp;#10;    &amp;#10;thisExp.addData('circleCoords', circleCoords)&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="import * as psychopy.visual from 'psychopy/visual';&amp;#10;import * as psychopy.core from 'psychopy/core';&amp;#10;import * as random from 'random';&amp;#10;var circleCoords, circles, displayTime, xPos, yPos;&amp;#10;win.flip();&amp;#10;core.wait(1);&amp;#10;displayTime = new core.CountdownTimer(duration);&amp;#10;circles = [];&amp;#10;circleCoords = [];&amp;#10;for (var i = 0, _pj_a = dotCount; (i &lt; _pj_a); i += 1) {&amp;#10;    xPos = random.uniform((- 0.25), 0.25);&amp;#10;    yPos = random.uniform((- 0.25), 0.25);&amp;#10;    circles.append(new psychopy.visual.Circle({&quot;win&quot;: win, &quot;lineWidth&quot;: 0, &quot;opacity&quot;: 1, &quot;radius&quot;: 0.01, &quot;fillColor&quot;: &quot;black&quot;, &quot;pos&quot;: [xPos, yPos]}));&amp;#10;    circleCoords.append([xPos, yPos]);&amp;#10;}&amp;#10;thisExp.addData(&quot;circleCoords&quot;, circleCoords);&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="import psychopy.visual, psychopy.core&amp;#10;import random&amp;#10;&amp;#10;win.flip()&amp;#10;core.wait(1)&amp;#10;&amp;#10;displayTime = core.CountdownTimer(duration)&amp;#10;&amp;#10;circles = []&amp;#10;circleCoords = []&amp;#10;for i in range(dotCount):&amp;#10;    xPos = random.uniform(-0.25, 0.25) &amp;#10;    yPos = random.uniform(-0.25, 0.25) &amp;#10;    circles.append(psychopy.visual.Circle(&amp;#10;        win = win,&amp;#10;        lineWidth = 0,&amp;#10;        opacity = 1,&amp;#10;        radius = 0.01,&amp;#10;        fillColor = 'black',&amp;#10;        pos = (xPos, yPos)&amp;#10;    ))&amp;#10;    circleCoords.append((xPos, yPos))&amp;#10;    &amp;#10;thisExp.addData('circleCoords', circleCoords)&amp;#10;" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
-        <Param name="Each Frame" updates="constant" val="for circle in circles:&amp;#10;    circle.draw()" valType="extendedCode"/>
-        <Param name="Each JS Frame" updates="constant" val="for (var circle, _pj_c = 0, _pj_a = circles, _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    circle = _pj_a[_pj_c];&amp;#10;    circle.draw();&amp;#10;}&amp;#10;" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="if displayTime.getTime() &gt; 0:&amp;#10;    for circle in circles:&amp;#10;        circle.draw()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="if ((displayTime.getTime() &gt; 0)) {&amp;#10;    for (var circle, _pj_c = 0, _pj_a = circles, _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;        circle = _pj_a[_pj_c];&amp;#10;        circle.draw();&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="win.flip();&amp;#10;" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="win.flip()" valType="extendedCode"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="name" updates="None" val="generateDots" valType="code"/>
       </CodeComponent>
-      <StaticComponent name="ISI">
-        <Param name="code" updates="None" val="" valType="code"/>
-        <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="name" updates="None" val="ISI" valType="code"/>
-        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="$duration" valType="code"/>
-        <Param name="syncScreenRefresh" updates="None" val="False" valType="bool"/>
-      </StaticComponent>
-    </Routine>
-    <Routine name="response">
-      <TextComponent name="text">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
-        <Param name="name" updates="None" val="text" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.2" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="constant" val="Hány pontot látott?" valType="extendedStr"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
       <KeyboardComponent name="resp">
         <Param name="allowedKeys" updates="constant" val="'1','2','3','4','5','6','7','8','9'" valType="code"/>
         <Param name="correctAns" updates="constant" val="$dotCount" valType="str"/>
@@ -101,7 +62,7 @@
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.2" valType="code"/>
+        <Param name="startVal" updates="None" val="0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="store" updates="constant" val="last key" valType="str"/>
@@ -281,7 +242,6 @@
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
     <Routine name="trial"/>
-    <Routine name="response"/>
     <Routine name="feedback"/>
     <LoopTerminator name="practice"/>
     <Routine name="expstart"/>
@@ -297,7 +257,6 @@
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
     <Routine name="trial"/>
-    <Routine name="response"/>
     <LoopTerminator name="trials"/>
     <Routine name="end"/>
   </Flow>
