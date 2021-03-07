@@ -39,8 +39,8 @@
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="import * as psychopy.visual from 'psychopy/visual';&amp;#10;import * as psychopy.core from 'psychopy/core';&amp;#10;import * as random from 'random';&amp;#10;var circles, xPos, yPos;&amp;#10;win.flip();&amp;#10;core.wait(1);&amp;#10;circles = [];&amp;#10;for (var i = 0, _pj_a = dotCount; (i &lt; _pj_a); i += 1) {&amp;#10;    xPos = random.uniform((- 0.25), 0.25);&amp;#10;    yPos = random.uniform((- 0.25), 0.25);&amp;#10;    circles.append(new psychopy.visual.Circle({&quot;win&quot;: win, &quot;lineWidth&quot;: 0, &quot;opacity&quot;: 1, &quot;radius&quot;: 0.01, &quot;fillColor&quot;: &quot;black&quot;, &quot;pos&quot;: [xPos, yPos]}));&amp;#10;}&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="import psychopy.visual, psychopy.core&amp;#10;import random&amp;#10;&amp;#10;win.flip()&amp;#10;core.wait(1)&amp;#10;&amp;#10;circles = []&amp;#10;for i in range(dotCount):&amp;#10;    xPos = random.uniform(-0.25, 0.25) &amp;#10;    yPos = random.uniform(-0.25, 0.25) &amp;#10;    circles.append(psychopy.visual.Circle(&amp;#10;        win = win,&amp;#10;        lineWidth = 0,&amp;#10;        opacity = 1,&amp;#10;        radius = 0.01,&amp;#10;        fillColor = 'black',&amp;#10;        pos = (xPos, yPos)&amp;#10;    ))&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="import * as psychopy.visual from 'psychopy/visual';&amp;#10;import * as psychopy.core from 'psychopy/core';&amp;#10;import * as random from 'random';&amp;#10;var circleCoords, circles, xPos, yPos;&amp;#10;win.flip();&amp;#10;core.wait(1);&amp;#10;circles = [];&amp;#10;circleCoords = [];&amp;#10;for (var i = 0, _pj_a = dotCount; (i &lt; _pj_a); i += 1) {&amp;#10;    xPos = random.uniform((- 0.25), 0.25);&amp;#10;    yPos = random.uniform((- 0.25), 0.25);&amp;#10;    circles.append(new psychopy.visual.Circle({&quot;win&quot;: win, &quot;lineWidth&quot;: 0, &quot;opacity&quot;: 1, &quot;radius&quot;: 0.01, &quot;fillColor&quot;: &quot;black&quot;, &quot;pos&quot;: [xPos, yPos]}));&amp;#10;    circleCoords.append([xPos, yPos]);&amp;#10;}&amp;#10;thisExp.addData(&quot;circleCoords&quot;, circleCoords);&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="import psychopy.visual, psychopy.core&amp;#10;import random&amp;#10;&amp;#10;win.flip()&amp;#10;core.wait(1)&amp;#10;&amp;#10;circles = []&amp;#10;circleCoords = []&amp;#10;for i in range(dotCount):&amp;#10;    xPos = random.uniform(-0.25, 0.25) &amp;#10;    yPos = random.uniform(-0.25, 0.25) &amp;#10;    circles.append(psychopy.visual.Circle(&amp;#10;        win = win,&amp;#10;        lineWidth = 0,&amp;#10;        opacity = 1,&amp;#10;        radius = 0.01,&amp;#10;        fillColor = 'black',&amp;#10;        pos = (xPos, yPos)&amp;#10;    ))&amp;#10;    circleCoords.append((xPos, yPos))&amp;#10;    &amp;#10;thisExp.addData('circleCoords', circleCoords)&amp;#10;" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="for circle in circles:&amp;#10;    circle.draw()" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="for (var circle, _pj_c = 0, _pj_a = circles, _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    circle = _pj_a[_pj_c];&amp;#10;    circle.draw();&amp;#10;}&amp;#10;" valType="extendedCode"/>
@@ -185,8 +185,8 @@
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="/* Syntax Error: Fix Python code */" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="if resp.corr:&amp;#10;    feedbackStr = 'Helyes válasz! Reakcióidő: %.3f s' %(resp.rt)&amp;#10;else:&amp;#10;    feedbackStr = 'Helytelen válasz! Reakcióidő: %.3f s' %(resp.rt)" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="if (resp.corr) {&amp;#10;    feedbackStr = &quot;Helyes v\u00e1lasz!&quot;;&amp;#10;} else {&amp;#10;    feedbackStr = &quot;Helytelen v\u00e1lasz!&quot;;&amp;#10;}&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if resp.corr:&amp;#10;    feedbackStr = 'Helyes válasz!'&amp;#10;else:&amp;#10;    feedbackStr = 'Helytelen válasz!'" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -292,7 +292,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="6" valType="code"/>
+      <Param name="nReps" updates="None" val="20" valType="code"/>
       <Param name="name" updates="None" val="trials" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
