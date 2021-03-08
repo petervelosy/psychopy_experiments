@@ -91,7 +91,7 @@
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="constant" val="Üdvözöljük!&amp;#10;&amp;#10;A következő kísérletben pontokat fog látni a képernyőn. Az lesz a feladata, hogy a lehető legnagyobb pontossággal és gyorsasággal igyekezzen meghatározni, hogy hány pontot látott. Válaszát az 1-9 számbillentyűk segítségével adhatja meg. Amennyiben egyből tudja  jó választ, azt már a pontok megjelenése közben is jelezheti.&amp;#10;&amp;#10;A kísérlet gyakorló blokkal kezdődik, ezt követi az éles feladat.&amp;#10;&amp;#10;Nyomjon le egy tetszőleges billentyűt a gyakorlás indításához!" valType="extendedStr"/>
+        <Param name="text" updates="constant" val="Üdvözöljük!&amp;#10;&amp;#10;A következő kísérletben pontokat fog látni a képernyőn. Az lesz a feladata, hogy a lehető legnagyobb pontossággal és gyorsasággal igyekezzen meghatározni, hogy hány pontot látott. Válaszát az 1-9 számbillentyűk segítségével adhatja meg. Amennyiben egyből tudja a jó választ, azt már a pontok megjelenése közben is jelezheti.&amp;#10;&amp;#10;A kísérlet gyakorló blokkal kezdődik, ezt követi az éles feladat.&amp;#10;&amp;#10;Nyomjon le egy tetszőleges billentyűt a gyakorlás indításához!" valType="extendedStr"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
